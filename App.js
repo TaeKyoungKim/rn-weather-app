@@ -6,7 +6,8 @@ export default class App extends Component {
   state = {
     isLoaded: false,
     lat:null,
-    long:null
+    long:null,
+    error: null
 
   };
 
@@ -21,13 +22,15 @@ export default class App extends Component {
         });
 
         error =>{
-          console.log(error);
+          this.setState({
+            error: error.message
+          });
         }
       }
     )
   }
   render() {
-    const { isLoaded } = this.state;
+    const {isLoaded,error } = this.state;
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
@@ -36,6 +39,7 @@ export default class App extends Component {
         ) : (
           <View style={styles.loading}>
             <Text style={styles.loadingText}>Getting the weather</Text>
+            {error ? < Text > error </Text> : null}
           </View>
         )}
       </View>
