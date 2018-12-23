@@ -12,7 +12,7 @@ export default class Weather extends Component {
             <Text style = {styles.temperature}> -3º </Text> 
             </View> 
             <View style = {styles.lower} >
-            <Text style = {styles.title} > Raining like a MF </Text> 
+            <Text style = {styles.title} > Snow like a X-mas </Text> 
             <Text style = {styles.subtitle}> For more info look outside </Text> 
             </View> 
             </LinearGradient>
